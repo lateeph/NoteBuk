@@ -22,3 +22,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/add-notebook', 'NotebooksController@ShowAddNotebookForm');
 Route::post('/add', 'NotebooksController@addNotebook');
+Route::get('/notebooks', 'NotebooksController@showNotebooks');
