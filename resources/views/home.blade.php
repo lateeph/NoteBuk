@@ -1,23 +1,37 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+<head>
+    <meta charset="UTF-8">
+    <title>NoteBook App</title>
+    <link rel="stylesheet" href="dist/css/main.css">
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+</head>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar  navbar-dark bg-primary">
+            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header">
+                &#9776;
+            </button>
+            <div class="collapse navbar-toggleable-xs" id="navbar-header">
+                <a class="navbar-brand" href="#">NoteBook App</a>
+               
+        </nav>
+        <!-- /navbar -->
+        <!-- Main component for call to action -->
+        <div class="jumbotron">
+            <h1>Notebook</h1>
+            <p>Store and organise your thoughts in notebook and NoteBook web app makes this easier than ever</p>
+            <p>
+                <a class="btn btn-lg btn-primary" href="notebooks.html" role="button">Your NoteBooks</a>
+            </p>
         </div>
     </div>
-</div>
-@endsection
+    <!-- /container -->
+
+    <script src="dist/js/jquery3.min.js"></script>
+    <script src="dist/js/bootstrap.js"></script>
+</body>
+
+</html>
