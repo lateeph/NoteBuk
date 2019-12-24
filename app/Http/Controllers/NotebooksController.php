@@ -26,5 +26,9 @@ class NotebooksController extends Controller
     	Notebook::destroy($id);
     	return redirect()->route('notebooks');
     }
+
+    public function showEditForm(){
+    	return view('notebooks.update-notebook');
+    }
 }
 

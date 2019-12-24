@@ -5,7 +5,7 @@
             <div class="container text-center">
                 <!-- heading -->
                 <h1 class="pull-xs-left">
-                    Add Notebook
+                    Update Notebook
                 </h1>
                 
 
@@ -14,14 +14,12 @@
                 <br>
                 
                 <!-- ================ Add Notebook form==================== -->
-                <form action="{{route('notebooks.save')}}" method="post">
+                <form action="" method="post">
                     <div class="form-group">
-                        {{ csrf_field() }}
                         <input type="text" class="form-control" name="title" placeholder="Enter Notebook Title Here">
                     </div>
-                    <button type="submit" class="btn btn-primary">Add Notebook</button>
+                    <button type="submit" class="btn btn-primary">Update Notebook</button>
                 </form>
             </div>
 
 @endsection
-           
