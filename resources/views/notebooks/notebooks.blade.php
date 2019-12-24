@@ -31,7 +31,7 @@
                     Your Notebooks
                 </h1>
                 <div class="pull-xs-right">
-                    <a class="btn btn-primary" href="addNotebook.html" role="button">
+                    <a class="btn btn-primary" href="{{route('notebooks.add')}}" role="button">
                         New NoteBook +
                     </a>
                 </div>
@@ -59,7 +59,9 @@
                             <a class="card-link" href="#">
                                 Edit Notebook
                             </a>
-                            <form action="#" class="pull-xs-right5 card-link" method="POST" style="display:inline">
+                            <form action="{{route('notebooks.delete', $notebook->id)}}" class="pull-xs-right5 card-link" method="POST" style="display:inline">
+                                {{csrf_field()}}
+                                {{method_field('DELETE')}}
                                 <input class="btn btn-sm btn-danger" type="submit" value="Delete">
                                 </input>
                             </form>

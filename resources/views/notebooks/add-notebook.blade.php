@@ -37,7 +37,7 @@
                 <br>
                 
                 <!-- ================ Add Notebook form==================== -->
-                <form action="/add" method="post">
+                <form action="{{route('notebooks.save')}}" method="post">
                     <div class="form-group">
                         {{ csrf_field() }}
                         <input type="text" class="form-control" name="title" placeholder="Enter Notebook Title Here">

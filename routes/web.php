@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/add-notebook', 'NotebooksController@ShowAddNotebookForm');
-Route::post('/add', 'NotebooksController@addNotebook');
-Route::get('/notebooks', 'NotebooksController@showNotebooks');
+Route::get('/add-notebook', 'NotebooksController@ShowAddNotebookForm')->name('notebooks.add');
+Route::post('/add', 'NotebooksController@addNotebook')->name('notebooks.save');
+Route::get('/notebooks', 'NotebooksController@showNotebooks')->name('notebooks');
+Route::delete('/notebooks/{id}', 'NotebooksController@destroy')->name('notebooks.delete');

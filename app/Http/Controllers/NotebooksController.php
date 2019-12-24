@@ -14,11 +14,17 @@ class NotebooksController extends Controller
     public function addNotebook(Request $request){
     	$title = $request->title;
     	Notebook::create(['title'=>$title]);
-    	return 'created';
+    	return redirect()->route('notebooks');
     }
 
     public function showNotebooks(){
     	$notebooks = Notebook::all();
     	return view('notebooks.notebooks', compact('notebooks'));
     }
+
+    public function destroy($id){
+    	Notebook::destroy($id);
+    	return redirect()->route('notebooks');
+    }
 }
+
