@@ -24,4 +24,5 @@ Route::get('/add-notebook', 'NotebooksController@ShowAddNotebookForm')->name('no
 Route::post('/add', 'NotebooksController@addNotebook')->name('notebooks.save');
 Route::get('/notebooks', 'NotebooksController@showNotebooks')->name('notebooks');
 Route::delete('/notebooks/{id}', 'NotebooksController@destroy')->name('notebooks.delete');
-Route::get('/notebooks/edit', 'NotebooksController@showEditForm')->name('notebooks.edit');
+Route::get('/notebooks/edit/{id}', 'NotebooksController@showEditForm')->name('notebooks.edit');
+Route::put('/notebooks/update/{id}', 'NotebooksController@update')->name('notebooks.update');

@@ -14,9 +14,11 @@
                 <br>
                 
                 <!-- ================ Add Notebook form==================== -->
-                <form action="" method="post">
+                <form action="{{route('notebooks.update', $id)}}" method="post">
+                    {{csrf_field()}}
+                    {{method_field('PUT')}}
                     <div class="form-group">
-                        <input type="text" class="form-control" name="title" placeholder="Enter Notebook Title Here">
+                        <input type="text" class="form-control" name="title" placeholder="Enter Notebook Title Here" value="{{$notebook->title}}">
                     </div>
                     <button type="submit" class="btn btn-primary">Update Notebook</button>
                 </form>

@@ -27,8 +27,16 @@ class NotebooksController extends Controller
     	return redirect()->route('notebooks');
     }
 
-    public function showEditForm(){
-    	return view('notebooks.update-notebook');
+    public function showEditForm($id){
+    	$notebook = Notebook::find($id);
+    	return view('notebooks.update-notebook', compact('id', 'notebook'));
+    }
+
+    public function update(Request $request, $id){
+    	$title = $request->title;
+    	$notebook = Notebook::find($id);
+    	$notebook->update(['title'=>$title]);
+    	return redirect()->route('notebooks');
     }
 }
 

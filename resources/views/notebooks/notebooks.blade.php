@@ -33,7 +33,7 @@
                             <img alt="Responsive image" class="img-fluid" src="dist/img/notebook.jpg"/>
                         </a>
                         <div class="card-block">
-                            <a class="card-link" href="{{route('notebooks.edit')}}">
+                            <a class="card-link" href="{{route('notebooks.edit', $notebook->id)}}">
                                 Edit Notebook
                             </a>
                             <form action="{{route('notebooks.delete', $notebook->id)}}" class="pull-xs-right5 card-link" method="POST" style="display:inline">
