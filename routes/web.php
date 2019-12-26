@@ -20,9 +20,16 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+Route::group(['middleware'=>'auth'], function(){
+
 Route::get('/add-notebook', 'NotebooksController@ShowAddNotebookForm')->name('notebooks.add');
 Route::post('/add', 'NotebooksController@addNotebook')->name('notebooks.save');
 Route::get('/notebooks', 'NotebooksController@showNotebooks')->name('notebooks');
 Route::delete('/notebooks/{id}', 'NotebooksController@destroy')->name('notebooks.delete');
 Route::get('/notebooks/edit/{id}', 'NotebooksController@showEditForm')->name('notebooks.edit');
 Route::put('/notebooks/update/{id}', 'NotebooksController@update')->name('notebooks.update');
+Route::get('/notes/{id}', 'NotesController@showNotes')->name('notes');
+Route::get('/add-note/{id}', 'NotesController@showAddForm')->name('notes.add');
+Route::post('/save-note/{id}', 'NotesController@saveNote')->name('notes.save');
+});
+

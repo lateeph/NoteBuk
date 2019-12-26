@@ -23,7 +23,7 @@
                 <div class="col-sm-6 col-md-3">
                     <div class="card">
                         <div class="card-block">
-                            <a href="#">
+                            <a href="{{route('notes', $notebook->id)}}">
                                 <h4 class="card-title">
                                     {{ $notebook->title }}
                                 </h4>
