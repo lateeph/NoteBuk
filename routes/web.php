@@ -32,5 +32,7 @@ Route::get('/notes/{id}', 'NotesController@showNotes')->name('notes');
 Route::get('/add-note/{id}', 'NotesController@showAddForm')->name('notes.add');
 Route::post('/save-note/{id}', 'NotesController@saveNote')->name('notes.save');
 Route::delete('/delete-note/{note_id}/{notebook_id}', 'NotesController@destroy')->name('notes.delete');
+Route::get('/notes/edit/{note_id}/{notebook_id}', 'NotesController@showEditForm')->name('notes.edit');
+Route::put('/notes/update/{note_id}/{notebook_id}', 'NotesController@updateNote')->name('notes.update');
 });
 

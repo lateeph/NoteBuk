@@ -31,4 +31,18 @@ class NotesController extends Controller
     	Note::destroy($note_id);
     	return redirect()->route('notes', $notebook_id);
     }
+
+    public function showEditForm($note_id, $notebook_id){
+    	$note = Note::find($note_id);
+    	return view('notes.edit-note', compact('note', 'notebook_id'));
+    }
+
+    public function updateNote(Request $request, $note_id, $notebook_id){
+    	$title = $request->title;
+    	$body = $request->body;
+
+    	$note = Note::find($note_id);
+    	$note->update(['title'=>$title, 'body'=>$body]);
+    	return redirect()->route('notes', $notebook_id);
+    }
 }

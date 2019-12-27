@@ -26,7 +26,7 @@
                         <p class="card-text">
                             {{$note->body}}
                         </p>
-                        <a class="btn btn-sm btn-info pull-xs-left" href="#">
+                        <a class="btn btn-sm btn-info pull-xs-left" href="{{route('notes.edit', [$note->id, $id])}}">
                             Edit
                         </a>
                         <form action="{{route('notes.delete', [$note->id, $id])}}" class="pull-xs-right" method="POST">
