@@ -29,7 +29,9 @@
                         <a class="btn btn-sm btn-info pull-xs-left" href="#">
                             Edit
                         </a>
-                        <form action="#" class="pull-xs-right" method="POST">
+                        <form action="{{route('notes.delete', [$note->id, $id])}}" class="pull-xs-right" method="POST">
+                            {{csrf_field()}}
+                            {{method_field('DELETE')}}
                             <input class="btn btn-sm btn-danger" type="submit" value="Delete">   
                         </form>
                     </div>
